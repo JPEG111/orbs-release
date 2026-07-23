@@ -14,14 +14,14 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.2.0-2b2b33?style=flat-square" alt="v1.2.0">
+  <img src="https://img.shields.io/badge/version-1.4.3-2b2b33?style=flat-square" alt="v1.4.3">
 </p>
 
 ---
 
 ## Install
 
-1. Download **`Orbs_Setup_1.2.0.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.4.3.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown — the installer is unsigned, so this is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -51,17 +51,25 @@ Orbs never touches the Discord client. Instead it reproduces the local footprint
 | **Process name** | Copies the Python interpreter to a local directory under the exact filename of the target game's binary, so `EnumProcesses` reports the expected executable. |
 | **Window handle** | Creates a real Win32 window with the game's window class and title, positioned off-screen, backed by a live message pump so it never registers as hung. |
 | **Rich Presence** | Publishes activity over Discord's local IPC named pipe (`\\.\pipe\discord-ipc-N`) rather than forging REST calls. |
-| **Timing** | Draws update intervals from a log-normal distribution instead of a fixed loop, and rotates sessions with realistic breaks rather than running unbroken for hours. |
-| **Resource curves** | Derives a per-game CPU/GPU/RAM envelope from a hash of its Discord application ID, then walks the values within that band. |
+| **Process ancestry** | Spawns the worker with a spoofed parent process (`steam.exe` when Steam is running, otherwise `explorer.exe`) via `PROC_THREAD_ATTRIBUTE_PARENT_PROCESS`, so the process tree looks like a normally-launched game rather than a child of Orbs. |
+| **Binary metadata** | Rewrites the disguised executable's PE version resource so it carries the game's `CompanyName`/`ProductName` instead of Python's — while preserving the packaged archive intact. |
+| **Fingerprint diversity** | Randomises each install's build number so no two users share an identical binary hash. This removes the cross-user cluster signal (see limits below); it does **not** make the hash match the real game. |
+| **Timing** | Draws update intervals from a log-normal distribution instead of a fixed loop, rotates sessions with realistic breaks, and adds a random tail to timed sessions so none end on a round minute. |
+| **Resource curves** | Derives a per-game CPU/GPU/RAM envelope from a hash of its Discord application ID, then walks the values within that band. Reserves real memory for a believable working set. |
 | **Pre-flight auditor** | Scores every outbound payload against 11 checks — flat timing, round-number timestamps, zero resources, dead window handle, clock monotonicity and others — and halts the session if a critical one fires. |
+| **Crash resilience** | The worker can never surface a raw exception dialog; any failure is caught, logged, and the OS footprint is torn down cleanly. All activity is written to a log at `%LOCALAPPDATA%\Orbs\orbs.log` for diagnostics. |
 
 ---
 
 ## Scope and honest limits
 
+**Not every game can be spoofed.** Roughly 44% of the ~23,700 apps in Discord's database ship a Windows executable name Orbs can impersonate. The rest (mostly newer titles) list no executable at all — there is nothing to rename, so Orbs marks them "cannot spoof" rather than pretending. This is a fact about Discord's data, not a limitation we can code around.
+
+**There is a ceiling this architecture cannot pass.** Discord's quest heartbeat carries a fingerprint computed from the *actual bytes* of the detected binary. A renamed interpreter fingerprints as the interpreter, not the game. Today Discord largely does not compare this server-side — but if it ever does, every rename-based tool breaks at once, and no amount of local spoofing can fix it, because matching the hash would require the real game's files. Orbs is honest about this rather than claiming to be "undetectable."
+
 **The auditor grades Orbs against its own model, not against Discord's.** A clean score means the payload shows none of the anomalies Orbs knows how to look for. It is not evidence that Discord cannot detect the session, and nobody outside Discord knows what their detection actually measures. Treat a clean score as a sanity check, not a guarantee.
 
-**Using this violates Discord's Terms of Service.** Spoofed activity can get an account suspended or terminated. That risk is yours, and it is real regardless of how careful the implementation is. Don't run it on an account you can't afford to lose.
+**Using this violates Discord's Terms of Service.** Spoofed activity can get an account suspended or terminated, and enforcement is known to be applied retroactively in batches — "it worked and nothing happened" is not proof of safety. That risk is yours. Don't run it on an account you can't afford to lose.
 
 Things that will expose a session no matter what Orbs does:
 
