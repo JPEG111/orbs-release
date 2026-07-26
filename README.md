@@ -14,14 +14,14 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.5.1-2b2b33?style=flat-square" alt="v1.5.1">
+  <img src="https://img.shields.io/badge/version-1.5.2-2b2b33?style=flat-square" alt="v1.5.2">
 </p>
 
 ---
 
 ## Install
 
-1. Download **`Orbs_Setup_1.5.1.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.5.2.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown — the installer is unsigned, so this is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
