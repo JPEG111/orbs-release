@@ -6,7 +6,7 @@
 
 <p align="center">
   <b>Discord Rich Presence telemetry emulator for Windows</b><br>
-  Simulate playing any game in Discord's detectable-games database — without launching it.
+  Simulate playing any game in Discord's detectable-games database, without launching it.
 </p>
 
 <p align="center">
@@ -14,26 +14,26 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.9.0-2b2b33?style=flat-square" alt="v1.9.0">
+  <img src="https://img.shields.io/badge/version-1.9.1-2b2b33?style=flat-square" alt="v1.9.1">
 </p>
 
 ---
 
 > [!IMPORTANT]
-> ### "Why can't it do every game?" — a line we drew, not a wall we hit
+> ### "Why can't it do every game?" A line we drew, not a wall we hit
 >
 > When a game shows as **can't simulate**, that is Discord's own data, not a gap in Orbs: that title lists no Windows app, so there is nothing for Orbs to mirror at the OS level. It is not a bug or a missing feature.
 >
-> Approaches that reach *every* game, and every quest type, do exist elsewhere. Without exception they work by **modifying the Discord client** or by **using your account's login token to make requests as you**. Orbs does neither, on purpose. It only ever simulates a game's presence locally, on your own PC — it never touches your account, your login, or the Discord app itself.
+> Approaches that reach *every* game, and every quest type, do exist elsewhere. Without exception they work by **modifying the Discord client** or by **using your account's login token to make requests as you**. Orbs does neither, on purpose. It only ever simulates a game's presence locally, on your own PC, and never touches your account, your login, or the Discord app itself.
 >
-> That boundary is the whole point. It keeps Orbs a **game-presence simulator** — useful when your connection is too slow or capped to download a huge game just to appear in it — rather than something that acts on your account. We would rather cover fewer games the honest way than all of them by crossing that line.
+> That boundary is the whole point. It keeps Orbs a **game-presence simulator** (useful when your connection is too slow or capped to download a huge game just to appear in it) rather than something that acts on your account. We would rather cover fewer games the honest way than all of them by crossing that line.
 
 ---
 
 ## Install
 
-1. Download **`Orbs_Setup_1.9.0.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
-2. Run it. Windows SmartScreen will warn you the publisher is unknown — the installer is unsigned, so this is expected. Choose **More info → Run anyway**.
+1. Download **`Orbs_Setup_1.9.1.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
 No Python installation required. Everything is bundled.
@@ -63,24 +63,24 @@ Orbs never touches the Discord client. Instead it reproduces the local footprint
 | **Window handle** | Creates a real Win32 window with the game's window class and title, positioned off-screen, backed by a live message pump so it never registers as hung. |
 | **Rich Presence** | Publishes activity over Discord's local IPC named pipe (`\\.\pipe\discord-ipc-N`) rather than forging REST calls. |
 | **Process ancestry** | Spawns the worker with a spoofed parent process (`steam.exe` when Steam is running, otherwise `explorer.exe`) via `PROC_THREAD_ATTRIBUTE_PARENT_PROCESS`, so the process tree looks like a normally-launched game rather than a child of Orbs. |
-| **Binary metadata** | Rewrites the disguised executable's PE version resource so it carries the game's `CompanyName`/`ProductName` instead of Python's — while preserving the packaged archive intact. |
+| **Binary metadata** | Rewrites the disguised executable's PE version resource so it carries the game's `CompanyName`/`ProductName` instead of Python's, while preserving the packaged archive intact. |
 | **Fingerprint diversity** | Randomises each install's build number so no two users share an identical binary hash. This removes the cross-user cluster signal (see limits below); it does **not** make the hash match the real game. |
 | **Timing** | Draws update intervals from a log-normal distribution instead of a fixed loop, rotates sessions with realistic breaks, and adds a random tail to timed sessions so none end on a round minute. |
 | **Resource curves** | Derives a per-game CPU/GPU/RAM envelope from a hash of its Discord application ID, then walks the values within that band. Reserves real memory for a believable working set. |
-| **Pre-flight auditor** | Scores every outbound payload against 11 checks — flat timing, round-number timestamps, zero resources, dead window handle, clock monotonicity and others — and halts the session if a critical one fires. |
+| **Pre-flight auditor** | Scores every outbound payload against 11 checks (flat timing, round-number timestamps, zero resources, dead window handle, clock monotonicity and others) and halts the session if a critical one fires. |
 | **Crash resilience** | The worker can never surface a raw exception dialog; any failure is caught, logged, and the OS footprint is torn down cleanly. All activity is written to a log at `%LOCALAPPDATA%\Orbs\orbs.log` for diagnostics. |
 
 ---
 
 ## Scope and honest limits
 
-**Not every game can be simulated.** Roughly 42% of the ~24,600 apps in Discord's database ship a Windows executable name Orbs can mirror (re-measured October 2026). The rest (mostly newer titles) list no executable at all — there is nothing to mirror, so Orbs marks them "can't simulate" rather than pretending. This is a fact about Discord's data, not a limitation we can code around. See the callout at the top for why Orbs won't reach them by other means.
+**Not every game can be simulated.** Roughly 42% of the ~24,600 apps in Discord's database ship a Windows executable name Orbs can mirror (re-measured October 2026). The rest (mostly newer titles) list no executable at all, so there is nothing to mirror and Orbs marks them "can't simulate" rather than pretending. This is a fact about Discord's data, not a limitation we can code around. See the callout at the top for why Orbs won't reach them by other means.
 
-**There is a ceiling this architecture cannot pass.** Discord's quest heartbeat carries a fingerprint computed from the *actual bytes* of the detected binary. A renamed interpreter fingerprints as the interpreter, not the game. Today Discord largely does not compare this server-side — but if it ever does, every rename-based tool breaks at once, and no amount of local spoofing can fix it, because matching the hash would require the real game's files. Orbs is honest about this rather than claiming to be "undetectable."
+**There is a ceiling this architecture cannot pass.** Discord's quest heartbeat carries a fingerprint computed from the *actual bytes* of the detected binary. A renamed interpreter fingerprints as the interpreter, not the game. Today Discord largely does not compare this server-side, but if it ever does, every rename-based tool breaks at once, and no amount of local spoofing can fix it, because matching the hash would require the real game's files. Orbs is honest about this rather than claiming to be "undetectable."
 
 **The auditor grades Orbs against its own model, not against Discord's.** A clean score means the payload shows none of the anomalies Orbs knows how to look for. It is not evidence that Discord cannot detect the session, and nobody outside Discord knows what their detection actually measures. Treat a clean score as a sanity check, not a guarantee.
 
-**Using this violates Discord's Terms of Service.** Spoofed activity can get an account suspended or terminated, and enforcement is known to be applied retroactively in batches — "it worked and nothing happened" is not proof of safety. That risk is yours. Don't run it on an account you can't afford to lose.
+**Using this violates Discord's Terms of Service.** Spoofed activity can get an account suspended or terminated, and enforcement is known to be applied retroactively in batches, so "it worked and nothing happened" is not proof of safety. That risk is yours. Don't run it on an account you can't afford to lose.
 
 Things that will expose a session no matter what Orbs does:
 
@@ -92,13 +92,13 @@ Things that will expose a session no matter what Orbs does:
 
 ## Troubleshooting
 
-**Status stays "Disconnected"** — Discord isn't running, or is running elevated while Orbs isn't. Start Discord first; match elevation.
+**Status stays "Disconnected":** Discord isn't running, or is running elevated while Orbs isn't. Start Discord first; match elevation.
 
-**Game shows no cover art** — art is fetched from Steam by title match. Games not on Steam, or with a name that doesn't match cleanly, fall back to a plain tile. Cosmetic only.
+**Game shows no cover art:** art is fetched from Steam by title match. Games not on Steam, or with a name that doesn't match cleanly, fall back to a plain tile. Cosmetic only.
 
-**SmartScreen blocks the installer** — the build is unsigned. Code-signing certificates cost money; there is no way around the warning without one.
+**SmartScreen blocks the installer:** the build is unsigned. Code-signing certificates cost money; there is no way around the warning without one.
 
-**Nothing happens after START** — check the activity log on the dashboard. If the worker exited, the disguised executable was most likely quarantined by antivirus (it's a renamed copy of `python.exe`, which is a common heuristic trigger).
+**Nothing happens after START:** check the activity log on the dashboard. If the worker exited, the disguised executable was most likely quarantined by antivirus (it's a renamed copy of `python.exe`, which is a common heuristic trigger).
 
 ---
 
