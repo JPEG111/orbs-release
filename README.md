@@ -14,14 +14,25 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.8.0-2b2b33?style=flat-square" alt="v1.8.0">
+  <img src="https://img.shields.io/badge/version-1.9.0-2b2b33?style=flat-square" alt="v1.9.0">
 </p>
+
+---
+
+> [!IMPORTANT]
+> ### "Why can't it do every game?" — a line we drew, not a wall we hit
+>
+> When a game shows as **can't simulate**, that is Discord's own data, not a gap in Orbs: that title lists no Windows app, so there is nothing for Orbs to mirror at the OS level. It is not a bug or a missing feature.
+>
+> Approaches that reach *every* game, and every quest type, do exist elsewhere. Without exception they work by **modifying the Discord client** or by **using your account's login token to make requests as you**. Orbs does neither, on purpose. It only ever simulates a game's presence locally, on your own PC — it never touches your account, your login, or the Discord app itself.
+>
+> That boundary is the whole point. It keeps Orbs a **game-presence simulator** — useful when your connection is too slow or capped to download a huge game just to appear in it — rather than something that acts on your account. We would rather cover fewer games the honest way than all of them by crossing that line.
 
 ---
 
 ## Install
 
-1. Download **`Orbs_Setup_1.8.0.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.9.0.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown — the installer is unsigned, so this is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -33,7 +44,7 @@ No Python installation required. Everything is bundled.
 
 | Step | What to do |
 | :-- | :-- |
-| **1. Pick a game** | Open **Game Directory** and search. Results come live from Discord's own database of ~23,000 detectable games. |
+| **1. Pick a game** | Open **Game Directory** and search. Results come live from Discord's own database of ~24,600 detectable games. |
 | **2. Set a timer** | Drag the slider on the dashboard to auto-stop after a set number of minutes. Leave it at zero to run until you stop it manually. |
 | **3. Start** | Hit **START EVASION**. Your Discord status switches to the selected game and the uptime clock begins. |
 | **4. Stop** | Hit **STOP EVASION**, or let the timer expire. |
@@ -63,7 +74,7 @@ Orbs never touches the Discord client. Instead it reproduces the local footprint
 
 ## Scope and honest limits
 
-**Not every game can be spoofed.** Roughly 44% of the ~23,700 apps in Discord's database ship a Windows executable name Orbs can impersonate. The rest (mostly newer titles) list no executable at all — there is nothing to rename, so Orbs marks them "cannot spoof" rather than pretending. This is a fact about Discord's data, not a limitation we can code around.
+**Not every game can be simulated.** Roughly 42% of the ~24,600 apps in Discord's database ship a Windows executable name Orbs can mirror (re-measured October 2026). The rest (mostly newer titles) list no executable at all — there is nothing to mirror, so Orbs marks them "can't simulate" rather than pretending. This is a fact about Discord's data, not a limitation we can code around. See the callout at the top for why Orbs won't reach them by other means.
 
 **There is a ceiling this architecture cannot pass.** Discord's quest heartbeat carries a fingerprint computed from the *actual bytes* of the detected binary. A renamed interpreter fingerprints as the interpreter, not the game. Today Discord largely does not compare this server-side — but if it ever does, every rename-based tool breaks at once, and no amount of local spoofing can fix it, because matching the hash would require the real game's files. Orbs is honest about this rather than claiming to be "undetectable."
 
