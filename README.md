@@ -5,8 +5,9 @@
 <h1 align="center">Orbs</h1>
 
 <p align="center">
-  <b>Discord Rich Presence telemetry emulator for Windows</b><br>
-  Simulate playing any game in Discord's detectable-games database, without launching it.
+  <b>Appear in-game on Discord without launching anything.</b><br>
+  A Windows Rich Presence telemetry emulator: simulate playing any game in Discord's
+  detectable-games database, so your status shows it even on a slow or capped connection.
 </p>
 
 <p align="center">
@@ -15,6 +16,13 @@
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
   <img src="https://img.shields.io/badge/version-1.9.1-2b2b33?style=flat-square" alt="v1.9.1">
+</p>
+
+<p align="center">
+  <a href="#install">Install</a> &nbsp;·&nbsp;
+  <a href="#usage">Usage</a> &nbsp;·&nbsp;
+  <a href="#how-it-works">How it works</a> &nbsp;·&nbsp;
+  <a href="#scope-and-honest-limits">Honest limits</a>
 </p>
 
 ---
@@ -99,6 +107,21 @@ Things that will expose a session no matter what Orbs does:
 **SmartScreen blocks the installer:** the build is unsigned. Code-signing certificates cost money; there is no way around the warning without one.
 
 **Nothing happens after START:** check the activity log on the dashboard. If the worker exited, the disguised executable was most likely quarantined by antivirus (it's a renamed copy of `python.exe`, which is a common heuristic trigger).
+
+---
+
+## Disclaimer
+
+Orbs is an independent, educational project for personal use. It is **not affiliated
+with, endorsed by, or connected to Discord Inc.** "Discord" and related marks belong to
+their respective owners and are used here only to describe what the software interoperates
+with.
+
+The software is provided **as is, without warranty of any kind**. Automating or simulating
+activity on Discord's features may conflict with Discord's Terms of Service and can result
+in action against your account. You alone are responsible for how you use it. If you are
+not comfortable with that, do not run it. See [Scope and honest limits](#scope-and-honest-limits)
+for the full picture.
 
 ---
 
