@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.12.0-2b2b33?style=flat-square" alt="v1.12.0">
+  <img src="https://img.shields.io/badge/version-1.13.0-2b2b33?style=flat-square" alt="v1.13.0">
 </p>
 
 <p align="center">
@@ -32,15 +32,15 @@
 >
 > When a game shows as **can't simulate**, that is Discord's own data, not a gap in Orbs: that title lists no Windows app, so there is nothing for Orbs to mirror at the OS level. It is not a bug or a missing feature.
 >
-> Orbs does not patch the Discord client or use your account's login token. Game presence is simulated locally. Scanning reads visible quest cards; video tasks are skipped and ambiguous titles stay available for review.
+> Orbs does not patch the Discord client or use your account's login token. Game presence is simulated locally. Scanning reads loaded quest cards; video tasks are skipped and ambiguous titles stay available for review.
 >
-> That boundary is the whole point. It keeps Orbs a **game-presence simulator** (useful when your connection is too slow or capped to download a huge game just to appear in it) rather than something that acts on your account. We would rather cover fewer games the honest way than all of them by crossing that line.
+> Quest acceptance is optional: when enabled in Settings, scans use the normal Discord controls to accept supported play quests and choose Desktop. This changes quest enrollment in your account. It does not simulate videos or claim rewards.
 
 ---
 
 ## Install
 
-1. Download **`Orbs_Setup_1.12.0.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.13.0.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -68,7 +68,24 @@ that point to the installation being removed.
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
 
-### New in 1.12.0
+### New in 1.13.0
+
+Enable **Settings > Accept supported play quests and choose Desktop during scans**
+to let manual and sign-in scans click **Accept Quest**, open the platform dropdown
+when needed, choose **Quest on Desktop**, and verify progress before adding a game.
+Already accepted quests skip the acceptance click. Console is never selected.
+
+This option defaults off. Unsupported/ambiguous quests, videos and unexpected dialogs
+stay for review. An uncertain action is not retried automatically; use **Details**
+and check Discord. Cancelling leaves the queue unchanged but cannot undo quests
+already accepted. Saved-queue-only startup does not accept quests. The original
+interface is preserved, and Power mode remains removed.
+
+115 tests passed, including acceptance state transitions and cancellation. Native
+local control fixtures verified both in-card and external platform menus. Live
+Discord acceptance/platform verification remains pending; no reward credit is promised.
+
+### Changes in 1.12.0
 
 **Scan Discord** opens the running client's **Quests > All Quests** view and reads
 loaded quest-card accessibility text, including cards below the screen. Manual
@@ -102,9 +119,10 @@ Power mode stays removed. Saved queues and settings are preserved.
 - **Power mode removed**, including its video runtime modules. Saved queues and
   settings remain intact. Review old queue items imported by earlier scanners.
 
-Scanning covers only visible, readable English cards. Scroll Discord and scan
-again for another section. It cannot establish acceptance, eligibility, remaining
-duration or completion; it does not automatically accept quests or play videos.
+Since 1.12.0 scanning covers loaded English desktop cards, including cards below
+the screen. Filters, unloaded cards and changed accessibility controls can limit
+coverage. Acceptance requires the optional 1.13.0 setting above; remaining duration,
+eligibility and reward credit still need checking in Discord. Videos stay manual.
 
 ### Installation improvements from 1.10.1
 
