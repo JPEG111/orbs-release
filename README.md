@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.11.0-2b2b33?style=flat-square" alt="v1.11.0">
+  <img src="https://img.shields.io/badge/version-1.11.1-2b2b33?style=flat-square" alt="v1.11.1">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.11.0.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.11.1.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -68,7 +68,14 @@ that point to the installation being removed.
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
 
-### New in 1.11.0
+### New in 1.11.1
+
+Restores the original Game Directory artwork, glass panels, colours and compact
+search rows. Queue timer/reorder/remove buttons are spaced below each title.
+The scan progress, cancellation and reliability fixes from 1.11.0 remain;
+Power mode stays removed. Saved queues and settings are preserved.
+
+### Changes in 1.11.0
 
 - **Card-aware scanning:** separates quest cards, enlarges their text and checks
   play instructions. Video tasks are skipped; unsupported and ambiguous matches
@@ -106,7 +113,7 @@ acceptance, eligibility, remaining duration or completion. Automation can put an
 
 ### Automatic updates
 
-Version 1.11.0 checks at launch and every six hours, with a visible manual check in
+Version 1.11.1 checks at launch and every six hours, with a visible manual check in
 Settings and a 15-minute retry after check errors. A newer stable installer is
 downloaded and verified; active sessions, queues and scans defer installation.
 **Later** postpones it until you choose Install update or reopen Orbs. Windows may
