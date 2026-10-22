@@ -6,7 +6,7 @@
 
 <p align="center">
   <b>Appear in-game on Discord without launching anything.</b><br>
-  A Windows Rich Presence telemetry emulator: simulate playing any game in Discord's
+  A Windows Rich Presence telemetry emulator: simulate supported games in Discord's
   detectable-games database, so your status shows it even on a slow or capped connection.
 </p>
 
@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.9.1-2b2b33?style=flat-square" alt="v1.9.1">
+  <img src="https://img.shields.io/badge/version-1.10.0-2b2b33?style=flat-square" alt="v1.10.0">
 </p>
 
 <p align="center">
@@ -32,7 +32,7 @@
 >
 > When a game shows as **can't simulate**, that is Discord's own data, not a gap in Orbs: that title lists no Windows app, so there is nothing for Orbs to mirror at the OS level. It is not a bug or a missing feature.
 >
-> Approaches that reach *every* game, and every quest type, do exist elsewhere. Without exception they work by **modifying the Discord client** or by **using your account's login token to make requests as you**. Orbs does neither, on purpose. It only ever simulates a game's presence locally, on your own PC, and never touches your account, your login, or the Discord app itself.
+> Orbs does not patch the Discord client or use your account's login token. Game presence is simulated locally. The optional real-video assistant reads visible cards and clicks a selected native video button; Discord controls playback, progress and claiming.
 >
 > That boundary is the whole point. It keeps Orbs a **game-presence simulator** (useful when your connection is too slow or capped to download a huge game just to appear in it) rather than something that acts on your account. We would rather cover fewer games the honest way than all of them by crossing that line.
 
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.9.1.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.10.0.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -58,6 +58,24 @@ No Python installation required. Everything is bundled.
 | **4. Stop** | Hit **STOP EVASION**, or let the timer expire. |
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
+
+### New in 1.10.0
+
+- **Scan Discord:** open the desktop Quests page and click Scan Discord in Game Directory. Readable supported titles enter the saved game queue; duplicate scans preserve existing timers. Scroll and rescan for more cards.
+- **Settings:** opt-in Windows sign-in launch, scan and game-queue start, a startup delay and cancellation. New startup actions default off. Manual-launch resume has its own switch.
+- **Power mode:** scan visible English Start Video Quest controls, check card previews and open a selected real video in Discord. Videos still pause when switching windows; there is no background focus bypass, fake completion or automatic reward claiming.
+
+Scans match visible titles and cannot establish quest acceptance, eligibility,
+task type, remaining duration or completion. Automation can put an account at risk.
+
+### Automatic updates
+
+Installed versions with the updater check the public GitHub Release when opened.
+A newer stable installer is downloaded and verified; an active game session defers
+installation. Windows may ask for administrator approval. Publishing source commits
+alone does not trigger updates, and already-running apps need to check again on a
+later launch. Older builds without the automatic updater need the Update button
+or a manual installer download first.
 
 ---
 
