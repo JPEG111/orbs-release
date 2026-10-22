@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.13.2-2b2b33?style=flat-square" alt="v1.13.2">
+  <img src="https://img.shields.io/badge/version-1.13.3-2b2b33?style=flat-square" alt="v1.13.3">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.13.2.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.13.3.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -68,7 +68,21 @@ that point to the installation being removed.
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
 
-### New in 1.13.2
+### New in 1.13.3
+
+Opening another Orbs copy or version while one is running now shows **Orbs is
+already running** in a dismissible toast, then exits. It cannot start another
+dashboard or queue. Quit the active copy from its tray icon before opening a
+different one. The notice closes after about 4.5 seconds without taking keyboard
+focus or adding a taskbar window. Sign-in duplicates exit quietly.
+
+The lock is shared across versions and paths in the current Windows login session.
+GUI and CLI participate; legitimate game workers remain allowed. Duplicate checks
+run before installed-copy forwarding, and a rejected launcher cannot keep the lock
+alive after the original app quits.132 regressions and a real native toast render
+passed. Old binaries without equivalent protection cannot be retroactively changed.
+
+### Changes in 1.13.2
 
 Scan from your current normal Discord tab; opening Friends or Quests first is
 unnecessary. Orbs uses a shared route: establish Home unless already on verified
@@ -161,7 +175,8 @@ eligibility and reward credit still need checking in Discord. Videos stay manual
   install/retry, logs, copy diagnostics and Quit.
 - Repair/upgrade reuses the registered folder, including when an old updater
   supplies a different destination. New installers reject downgrades.
-- Current copies reopen the registered app; second launches restore its window.
+- Current copies use the registered app when none is running; since 1.13.3,
+  duplicate launches show a toast and exit.
 - Clean shutdown for install/uninstall; saved startup opt-ins work after reinstall.
 - Windows file-version metadata, obsolete managed-file cleanup and bounded update
   cache retention. Historical builds and user files are preserved.
