@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.13.1-2b2b33?style=flat-square" alt="v1.13.1">
+  <img src="https://img.shields.io/badge/version-1.13.2-2b2b33?style=flat-square" alt="v1.13.2">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.13.1.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.13.2.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -68,7 +68,20 @@ that point to the installation being removed.
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
 
-### New in 1.13.1
+### New in 1.13.2
+
+Scan from your current normal Discord tab; opening Friends or Quests first is
+unnecessary. Orbs uses a shared route: establish Home unless already on verified
+Quests, open the sidebar Quests link, verify All Quests, then read cards. Starting
+tabs are not whitelisted. Links named Quests in chat/page content are ignored.
+
+123 regressions and nine native scenarios passed, including unrelated/duplicate
+link labels and delayed Home selection. Actual sidebar structure was checked in
+Discord. These tests do not mean every possible client view/layout was individually
+live-tested. Blocking dialogs/login or changed controls can still need attention.
+Original appearance, saved queues and optional acceptance settings are preserved.
+
+### Changes in 1.13.1
 
 Fixes scanning stopping at Friends and waiting for zero cards. Orbs now clicks
 the real Quests link inside the sidebar row, waits for navigation, verifies the
