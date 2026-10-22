@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.13.0-2b2b33?style=flat-square" alt="v1.13.0">
+  <img src="https://img.shields.io/badge/version-1.13.1-2b2b33?style=flat-square" alt="v1.13.1">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.13.0.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.13.1.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -68,7 +68,25 @@ that point to the installation being removed.
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
 
-### New in 1.13.0
+### New in 1.13.1
+
+Fixes scanning stopping at Friends and waiting for zero cards. Orbs now clicks
+the real Quests link inside the sidebar row, waits for navigation, verifies the
+selected All Quests tab and only then reads cards. A no-op click or ambiguous
+navigation control produces a specific error and leaves the queue unchanged.
+Delayed rendering cannot bounce the client back to Home.
+
+121 tests passed. A corrected real Friends-page scan read 21 cards/nine play tasks
+and added five supported games to an isolated test queue. Native local fixtures
+also passed Server, Friends, Claimed, already All, no-op and ambiguous cases. No
+quests were accepted or sessions started in that validation. The original design
+and acceptance settings are preserved; changed Discord controls can still need
+manual handling.
+A second live scan from outside Home retained all five queued games without
+duplicates. The exact 1.13.0 → 1.13.1 Sandbox upgrade preserved saved data and reused
+the existing installation.
+
+### Changes in 1.13.0
 
 Enable **Settings > Accept supported play quests and choose Desktop during scans**
 to let manual and sign-in scans click **Accept Quest**, open the platform dropdown
