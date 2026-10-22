@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.11.1-2b2b33?style=flat-square" alt="v1.11.1">
+  <img src="https://img.shields.io/badge/version-1.12.0-2b2b33?style=flat-square" alt="v1.12.0">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.11.1.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.12.0.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -68,7 +68,22 @@ that point to the installation being removed.
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
 
-### New in 1.11.1
+### New in 1.12.0
+
+**Scan Discord** opens the running client's **Quests > All Quests** view and reads
+loaded quest-card accessibility text, including cards below the screen. Manual
+scrolling and screenshot OCR are no longer the normal scan path. Navigation uses
+the running client's controls and avoids opening another Discord channel through
+Windows' global protocol handler.
+
+The summary separates detected play tasks from supported games. Catalog gaps,
+unsupported Windows entries and game selections remain visible for review.
+Live app verification read 20 cards, detected nine play tasks, queued five supported
+games and skipped ten videos. Original appearance and saved queues/timers retained;
+103 tests passed. Loaded English desktop cards only; filters/client changes affect
+coverage. Detection does not prove quest acceptance or reward credit.
+
+### Changes in 1.11.1
 
 Restores the original Game Directory artwork, glass panels, colours and compact
 search rows. Queue timer/reorder/remove buttons are spaced below each title.
@@ -113,7 +128,7 @@ acceptance, eligibility, remaining duration or completion. Automation can put an
 
 ### Automatic updates
 
-Version 1.11.1 checks at launch and every six hours, with a visible manual check in
+Version 1.12.0 checks at launch and every six hours, with a visible manual check in
 Settings and a 15-minute retry after check errors. A newer stable installer is
 downloaded and verified; active sessions, queues and scans defer installation.
 **Later** postpones it until you choose Install update or reopen Orbs. Windows may
