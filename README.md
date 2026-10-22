@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.10.0-2b2b33?style=flat-square" alt="v1.10.0">
+  <img src="https://img.shields.io/badge/version-1.10.1-2b2b33?style=flat-square" alt="v1.10.1">
 </p>
 
 <p align="center">
@@ -40,11 +40,20 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.10.0.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.10.1.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
 No Python installation required. Everything is bundled.
+
+Already installed? Run the new installer once: it repairs or updates the existing
+registered location and keeps your saved queue/settings. Launch the **Orbs** Start
+Menu shortcut afterward. Downloaded installers, development builds and backups
+are separate files; Windows Search may list them too.
+
+To uninstall, use **Windows Settings > Apps > Installed apps**. Your saved queue
+and preferences are retained for reinstalls. Orbs removes only startup commands
+that point to the installation being removed.
 
 ---
 
@@ -59,6 +68,17 @@ No Python installation required. Everything is bundled.
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
 
+### New in 1.10.1
+
+- **Installation and updates** in Settings: current version/path, manual check,
+  install/retry, logs, copy diagnostics and Quit.
+- Repair/upgrade reuses the registered folder, including when an old updater
+  supplies a different destination. New installers reject downgrades.
+- Current copies reopen the registered app; second launches restore its window.
+- Clean shutdown for install/uninstall; saved startup opt-ins work after reinstall.
+- Windows file-version metadata, obsolete managed-file cleanup and bounded update
+  cache retention. Historical builds and user files are preserved.
+
 ### New in 1.10.0
 
 - **Scan Discord:** open the desktop Quests page and click Scan Discord in Game Directory. Readable supported titles enter the saved game queue; duplicate scans preserve existing timers. Scroll and rescan for more cards.
@@ -70,12 +90,16 @@ task type, remaining duration or completion. Automation can put an account at ri
 
 ### Automatic updates
 
-Installed versions with the updater check the public GitHub Release when opened.
-A newer stable installer is downloaded and verified; an active game session defers
-installation. Windows may ask for administrator approval. Publishing source commits
-alone does not trigger updates, and already-running apps need to check again on a
-later launch. Older builds without the automatic updater need the Update button
-or a manual installer download first.
+Version 1.10.1 checks at launch and every six hours, with a visible manual check in
+Settings and a 15-minute retry after check errors. A newer stable installer is
+downloaded and verified; active sessions, queues and scans defer installation.
+**Later** postpones it until you choose Install update or reopen Orbs. Windows may
+ask for administrator approval. Source pushes alone do not trigger updates.
+1.9.1/1.10.0 check again when opened; very old builds may need a manual download.
+
+Old EXEs/installers cannot gain protections retroactively. Use the installed
+shortcut rather than historical build copies. Interactive UAC and every possible
+antivirus/power-loss failure are not covered by the automated lifecycle tests.
 
 ---
 
