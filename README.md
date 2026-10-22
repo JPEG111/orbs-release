@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.10.1-2b2b33?style=flat-square" alt="v1.10.1">
+  <img src="https://img.shields.io/badge/version-1.11.0-2b2b33?style=flat-square" alt="v1.11.0">
 </p>
 
 <p align="center">
@@ -32,7 +32,7 @@
 >
 > When a game shows as **can't simulate**, that is Discord's own data, not a gap in Orbs: that title lists no Windows app, so there is nothing for Orbs to mirror at the OS level. It is not a bug or a missing feature.
 >
-> Orbs does not patch the Discord client or use your account's login token. Game presence is simulated locally. The optional real-video assistant reads visible cards and clicks a selected native video button; Discord controls playback, progress and claiming.
+> Orbs does not patch the Discord client or use your account's login token. Game presence is simulated locally. Scanning reads visible quest cards; video tasks are skipped and ambiguous titles stay available for review.
 >
 > That boundary is the whole point. It keeps Orbs a **game-presence simulator** (useful when your connection is too slow or capped to download a huge game just to appear in it) rather than something that acts on your account. We would rather cover fewer games the honest way than all of them by crossing that line.
 
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.10.1.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.11.0.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -68,7 +68,23 @@ that point to the installation being removed.
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
 
-### New in 1.10.1
+### New in 1.11.0
+
+- **Card-aware scanning:** separates quest cards, enlarges their text and checks
+  play instructions. Video tasks are skipped; unsupported and ambiguous matches
+  remain visible with reasons and a manual search action.
+- **Clear loading:** capture, catalog and per-card progress stay visible until all
+  names and queue additions are ready. Cancel discards the scan's additions.
+- **Readable library:** solid dark result cards, clear queued/review states and a
+  scrollable queue with wrapped titles and separate timer/reorder/remove controls.
+- **Power mode removed**, including its video runtime modules. Saved queues and
+  settings remain intact. Review old queue items imported by earlier scanners.
+
+Scanning covers only visible, readable English cards. Scroll Discord and scan
+again for another section. It cannot establish acceptance, eligibility, remaining
+duration or completion; it does not automatically accept quests or play videos.
+
+### Installation improvements from 1.10.1
 
 - **Installation and updates** in Settings: current version/path, manual check,
   install/retry, logs, copy diagnostics and Quit.
@@ -83,14 +99,14 @@ Closing the window minimises Orbs to the system tray and it keeps running. Right
 
 - **Scan Discord:** open the desktop Quests page and click Scan Discord in Game Directory. Readable supported titles enter the saved game queue; duplicate scans preserve existing timers. Scroll and rescan for more cards.
 - **Settings:** opt-in Windows sign-in launch, scan and game-queue start, a startup delay and cancellation. New startup actions default off. Manual-launch resume has its own switch.
-- **Power mode:** scan visible English Start Video Quest controls, check card previews and open a selected real video in Discord. Videos still pause when switching windows; there is no background focus bypass, fake completion or automatic reward claiming.
+- Power mode was introduced in this release and removed in 1.11.0.
 
-Scans match visible titles and cannot establish quest acceptance, eligibility,
-task type, remaining duration or completion. Automation can put an account at risk.
+Scans interpret visible task wording but cannot establish account-side quest
+acceptance, eligibility, remaining duration or completion. Automation can put an account at risk.
 
 ### Automatic updates
 
-Version 1.10.1 checks at launch and every six hours, with a visible manual check in
+Version 1.11.0 checks at launch and every six hours, with a visible manual check in
 Settings and a 15-minute retry after check errors. A newer stable installer is
 downloaded and verified; active sessions, queues and scans defer installation.
 **Later** postpones it until you choose Install update or reopen Orbs. Windows may
