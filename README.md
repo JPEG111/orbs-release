@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.13.3-2b2b33?style=flat-square" alt="v1.13.3">
+  <img src="https://img.shields.io/badge/version-1.14.4-2b2b33?style=flat-square" alt="v1.14.4">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.13.3.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.14.4.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -61,14 +61,39 @@ that point to the installation being removed.
 
 | Step | What to do |
 | :-- | :-- |
-| **1. Pick a game** | Open **Game Directory** and search. Results come live from Discord's own database of ~24,600 detectable games. |
-| **2. Set a timer** | Drag the slider on the dashboard to auto-stop after a set number of minutes. Leave it at zero to run until you stop it manually. |
-| **3. Start** | Hit **START EVASION**. Your Discord status switches to the selected game and the uptime clock begins. |
+| **1. Pick a game** | Open **Library > Discover** and search, or scan Discord Quests. Review support and add games to Queue. |
+| **2. Set a timer** | Edit each Queue card’s play-time dial and arrange the order. Home also has an auto-stop slider for a single session. |
+| **3. Start** | Click **Start queue** in Library, or **START EVASION** on Home for one selected game. |
 | **4. Stop** | Hit **STOP EVASION**, or let the timer expire. |
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
 
-### New in 1.13.3
+### New in 1.14.4 — Gallery Deck
+
+- A larger native interface with game-responsive artwork, a compact navigation
+  rail, larger Home controls, and refreshed Settings and Audit views.
+- **Discover** uses stacked artwork tabs. Click to open a taller card; the
+  surrounding stack moves smoothly. Add games to your current saved queue.
+- **Queue** has compact editable play-time dials, −/+ press feedback, cached
+  hover animation, reorder arrows and individual removal controls.
+- Sharper artwork where publishers provide it: full-height 2× Steam heroes and
+  corrected public Discord cover loading. Missing/small source images still
+  have limits; the bundled defaults are 1024×576.
+- Activity instruments with clean typography and fractional orbital motion.
+  Orbs are the existing **local estimate**, not a Discord balance; spending is
+  unavailable. Unique-game/runtime tracking begins with this update. Estimated
+  time saved is based on automated runtime, not confirmed human time savings.
+- Exact 15-minute runs record the local threshold before stopping. Verify
+  actual quest progress and rewards in Discord.
+
+Home and Library retain sharp art; Settings and Audit deliberately soften the
+same selected backdrop. Existing optional Accept Quest → Desktop selection,
+startup settings, saved queue, updates and duplicate-version toast remain.
+The native UI adds no browser runtime or frontend service. Power mode stays removed.
+
+See the [versioned release and installer](https://github.com/JPEG111/orbs-release/releases/tag/v1.14.4).
+
+### Changes in 1.13.3
 
 Opening another Orbs copy or version while one is running now shows **Orbs is
 already running** in a dismissible toast, then exits. It cannot start another
@@ -183,7 +208,7 @@ eligibility and reward credit still need checking in Discord. Videos stay manual
 
 ### New in 1.10.0
 
-- **Scan Discord:** open the desktop Quests page and click Scan Discord in Game Directory. Readable supported titles enter the saved game queue; duplicate scans preserve existing timers. Scroll and rescan for more cards.
+- **Scan Discord:** click Scan Discord in Library. Orbs navigates to desktop Quests and reads loaded accessible cards, including below the screen. Review the matches and timers before Start; unsupported/unresolved quests stay available for attention.
 - **Settings:** opt-in Windows sign-in launch, scan and game-queue start, a startup delay and cancellation. New startup actions default off. Manual-launch resume has its own switch.
 - Power mode was introduced in this release and removed in 1.11.0.
 
@@ -226,7 +251,7 @@ Orbs never touches the Discord client. Instead it reproduces the local footprint
 
 ## Scope and honest limits
 
-**Not every game can be simulated.** Roughly 42% of the ~24,600 apps in Discord's database ship a Windows executable name Orbs can mirror (re-measured October 2026). The rest (mostly newer titles) list no executable at all, so there is nothing to mirror and Orbs marks them "can't simulate" rather than pretending. This is a fact about Discord's data, not a limitation we can code around. See the callout at the top for why Orbs won't reach them by other means.
+**Not every game can be simulated.** Roughly 42% of the ~24,800 apps in Discord's database ship a Windows executable name Orbs can mirror (public catalog checked 23 October 2026). The rest (mostly newer titles) list no executable at all, so there is nothing to mirror and Orbs marks them "can't simulate" rather than pretending. This is a fact about Discord's data, not a limitation we can code around. See the callout at the top for why Orbs won't reach them by other means.
 
 **There is a ceiling this architecture cannot pass.** Discord's quest heartbeat carries a fingerprint computed from the *actual bytes* of the detected binary. A renamed interpreter fingerprints as the interpreter, not the game. Today Discord largely does not compare this server-side, but if it ever does, every rename-based tool breaks at once, and no amount of local spoofing can fix it, because matching the hash would require the real game's files. Orbs is honest about this rather than claiming to be "undetectable."
 
@@ -246,11 +271,11 @@ Things that will expose a session no matter what Orbs does:
 
 **Status stays "Disconnected":** Discord isn't running, or is running elevated while Orbs isn't. Start Discord first; match elevation.
 
-**Game shows no cover art:** art is fetched from Steam by title match. Games not on Steam, or with a name that doesn't match cleanly, fall back to a plain tile. Cosmetic only.
+**Game shows no cover art:** artwork uses exact Steam matches and identity-checked public Discord covers. Missing publisher assets or network failures use a neutral cover/default scene. Some source images are small; requesting a larger size cannot recover missing detail.
 
 **SmartScreen blocks the installer:** the build is unsigned. Code-signing certificates cost money; there is no way around the warning without one.
 
-**Nothing happens after START:** check the activity log on the dashboard. If the worker exited, the disguised executable was most likely quarantined by antivirus (it's a renamed copy of `python.exe`, which is a common heuristic trigger).
+**Nothing happens after START:** check the Audit page. If the worker exited, the disguised executable was most likely quarantined by antivirus (it's a renamed copy of `python.exe`, which is a common heuristic trigger).
 
 ---
 
