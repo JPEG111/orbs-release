@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.14.4-2b2b33?style=flat-square" alt="v1.14.4">
+  <img src="https://img.shields.io/badge/version-1.15.0-2b2b33?style=flat-square" alt="v1.15.0">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.14.4.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.15.0.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -68,30 +68,37 @@ that point to the installation being removed.
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
 
-### New in 1.14.4 — Gallery Deck
+### New in 1.15.0 — ranks, scan workspace and gaming typography
 
-- A larger native interface with game-responsive artwork, a compact navigation
-  rail, larger Home controls, and refreshed Settings and Audit views.
-- **Discover** uses stacked artwork tabs. Click to open a taller card; the
-  surrounding stack moves smoothly. Add games to your current saved queue.
-- **Queue** has compact editable play-time dials, −/+ press feedback, cached
-  hover animation, reorder arrows and individual removal controls.
-- Sharper artwork where publishers provide it: full-height 2× Steam heroes and
-  corrected public Discord cover loading. Missing/small source images still
-  have limits; the bundled defaults are 1024×576.
-- Activity instruments with clean typography and fractional orbital motion.
-  Orbs are the existing **local estimate**, not a Discord balance; spending is
-  unavailable. Unique-game/runtime tracking begins with this update. Estimated
-  time saved is based on automated runtime, not confirmed human time savings.
-- Exact 15-minute runs record the local threshold before stopping. Verify
-  actual quest progress and rewards in Discord.
+- A shared gaming type system across Home, Library, Settings, Audit and dialogs:
+  **Oxanium** headings, **Chakra Petch** UI copy and **JetBrains Mono** technical
+  readings. Fonts are bundled and load locally; no font installation is needed.
+- **Scan Discord from Home**, with the same optional Accept Quest → Desktop
+  setting as Library. A compact glass workspace shows the actual scanner action,
+  elapsed time and an event-driven five-stage rail with a cached light sweep.
+- Clear scan guidance: leave Discord open on Quests without navigating, scrolling,
+  minimizing or closing it. You can use other apps. Cancel remains in Library;
+  results and queue additions appear together after completion.
+- **Ten distinct animated ranks**, Ember through Ascendant, with next-unlock
+  progress and a read-only ladder. They are cosmetic app ranks based on locally
+  estimated earned Orbs, not Discord ranks or a verified balance.
+- A transparent native caption and refined status glass over the selected game
+  scene. Library details have local glass for contrast; Home's hero, button and
+  lower figures remain directly on the sharp artwork. Settings/Audit soften it.
+- Fixed late/missing art updates, saved queue icon hashes and unrelated
+  similar-title fallback art. Unresolved quests retain neutral media and review
+  actions. Available source resolution still limits some games.
 
-Home and Library retain sharp art; Settings and Audit deliberately soften the
-same selected backdrop. Existing optional Accept Quest → Desktop selection,
-startup settings, saved queue, updates and duplicate-version toast remain.
-The native UI adds no browser runtime or frontend service. Power mode stays removed.
+The existing stacked Discover selection, editable Queue dials, cached hover/press
+feedback, startup opt-ins, tray, updater and duplicate-version protections remain.
+Discover searches the public game catalog and presents scan results; it adds to
+one saved queue. Video completion and reward claiming remain manual.
 
-See the [versioned release and installer](https://github.com/JPEG111/orbs-release/releases/tag/v1.14.4).
+Orbs and time saved are **local estimates**. Spending is unavailable; game/runtime
+tracking began in 1.14.4, and old history is not reconstructed. Verify quest
+eligibility, progress and rewards in Discord. The app adds no browser runtime.
+
+See the [versioned release and installer](https://github.com/JPEG111/orbs-release/releases/tag/v1.15.0).
 
 ### Changes in 1.13.3
 
