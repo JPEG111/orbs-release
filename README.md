@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.16.0-2b2b33?style=flat-square" alt="v1.16.0">
+  <img src="https://img.shields.io/badge/version-1.16.1-2b2b33?style=flat-square" alt="v1.16.1">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.16.0.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.16.1.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -68,7 +68,28 @@ that point to the installation being removed.
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
 
-### New in 1.16.0 — Automatic mode and a 30-rank progression
+### Fixed in 1.16.1 — accepted and finished quest recognition
+
+- Fix accepted quests being reported as not ready when Discord has not exposed
+  their offscreen progress rings. The scanner can reveal the exact verified card
+  with native accessibility, then reread progress; revealing never clicks Accept,
+  changes the platform or claims a reward.
+- Distinguish **already accepted** from **accepted now**. An accepted card whose
+  Desktop readiness remains unverifiable is labelled accepted and kept for review.
+- Show **Completed — claim in Discord** and **Reward claimed** states separately.
+  Finished rewards never enter the runnable queue or quest-acceptance candidates.
+- Ignore View Quest shortcut controls instead of creating unresolved placeholder
+  cards. Do not mistake promotional discount percentages for quest progress or
+  round almost-complete progress up to 100%.
+- Keep unsupported games visible when optional acceptance is enabled. Catalog
+  gaps, game-choice tasks and interactive quests retain their review actions.
+- Review/finished details show observed status rather than an endless game-info
+  loading message. Snapshot stability includes progress and platform controls.
+
+Existing queue/settings and the 30-rank / 500,000 progression are retained.
+[Download 1.16.1](https://github.com/JPEG111/orbs-release/releases/tag/v1.16.1).
+
+### Changes in 1.16.0 — Automatic mode and a 30-rank progression
 
 **Automatic mode** is an explicit setup choice in Settings → General. It
 explains the four sign-in steps, lets you choose a 15/30/60/120-second delay, and
