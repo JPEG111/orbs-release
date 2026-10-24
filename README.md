@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.15.0-2b2b33?style=flat-square" alt="v1.15.0">
+  <img src="https://img.shields.io/badge/version-1.16.0-2b2b33?style=flat-square" alt="v1.16.0">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.15.0.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.16.0.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -68,7 +68,35 @@ that point to the installation being removed.
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
 
-### New in 1.15.0 — ranks, scan workspace and gaming typography
+### New in 1.16.0 — Automatic mode and a 30-rank progression
+
+**Automatic mode** is an explicit setup choice in Settings → General. It
+explains the four sign-in steps, lets you choose a 15/30/60/120-second delay, and
+applies them together only after **Enable automatic mode**. Opening or dismissing
+setup saves nothing. It takes effect at the next Windows sign-in; Resume remains
+separate and retains its saved preference. Cancel pending startup is available
+during the wait or scan. Existing individual switches remain under Customize.
+
+The status panel now has **30 animated cosmetic ranks**, ending at
+**Singularity / 500,000 estimated Orbs**. Eight visual families keep related
+shapes and gemstone colours together; simpler models lead into more articulated
+versions. The first five stay restrained, while the final winged sequence gains
+layers, crowns and orbiting details. The read-only ladder groups each family,
+reveals your current rank and supports scrolling and keyboard navigation.
+
+The total, next-rank caption and progress rail sit closer to the visible emblem,
+with a larger wide-layout figure. Animations use cached frames and stop while
+hidden/minimized. Ranks and time saved are local estimates, not a verified Discord
+balance or rank. Spending is unavailable.
+
+The final rank unlocks at **500,000**, with no saved-total reset or clamp.
+Names/emblems have moved to follow their visual families, so an existing total
+may show a different cosmetic rank. Existing startup action choices are retained;
+this update does not silently enable Automatic mode.
+
+See the [1.16.0 release and installer](https://github.com/JPEG111/orbs-release/releases/tag/v1.16.0).
+
+### Changes in 1.15.0 — ranks, scan workspace and gaming typography
 
 - A shared gaming type system across Home, Library, Settings, Audit and dialogs:
   **Oxanium** headings, **Chakra Petch** UI copy and **JetBrains Mono** technical
