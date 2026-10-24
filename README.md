@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.16.5-2b2b33?style=flat-square" alt="v1.16.5">
+  <img src="https://img.shields.io/badge/version-1.16.6-2b2b33?style=flat-square" alt="v1.16.6">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.16.5.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.16.6.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -67,6 +67,15 @@ that point to the installation being removed.
 | **4. Stop** | Hit **STOP EVASION**, or let the timer expire. |
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
+
+### Fixed in 1.16.6 — queue navigation and shared scan controls
+
+- Start queue opens Home; an existing run is shown without restarting it.
+- Long game titles and queue subtitles fit above the status rows.
+- Close Library summaries with ×; results and queue data remain available.
+- Home and Discover use the same controller scan entry, shared two-step preference, live progress view and explicit Cancel action.
+
+[Download 1.16.6](https://github.com/JPEG111/orbs-release/releases/tag/v1.16.6).
 
 ### Fixed in 1.16.5 — more resilient scanning
 
