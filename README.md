@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.16.2-2b2b33?style=flat-square" alt="v1.16.2">
+  <img src="https://img.shields.io/badge/version-1.16.3-2b2b33?style=flat-square" alt="v1.16.3">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.16.2.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.16.3.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -67,6 +67,16 @@ that point to the installation being removed.
 | **4. Stop** | Hit **STOP EVASION**, or let the timer expire. |
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
+
+### Fixed in 1.16.3 — return from Discover search
+
+- Catalog search now opens a temporary view instead of losing your Discover list.
+- Use **Back to Discover**, **Escape**, clear the search field, or click **Discover** to restore your original games, selected card and scroll position.
+- Keep cached card artwork and metadata warm when returning. Repeated searches, no matches and lookup failures preserve the original list.
+- Ignore search responses delivered after you go back. Refreshing an empty search updates the catalog without erasing scan results.
+- Games added to your queue while searching remain queued. A newly completed scan replaces the previous Discover list normally.
+
+[Download 1.16.3](https://github.com/JPEG111/orbs-release/releases/tag/v1.16.3).
 
 ### Fixed in 1.16.2 — quest types and title matching
 
