@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.16.3-2b2b33?style=flat-square" alt="v1.16.3">
+  <img src="https://img.shields.io/badge/version-1.16.4-2b2b33?style=flat-square" alt="v1.16.4">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.16.3.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.16.4.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -67,6 +67,15 @@ that point to the installation being removed.
 | **4. Stop** | Hit **STOP EVASION**, or let the timer expire. |
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
+
+### Fixed in 1.16.4 — quest-card pictures
+
+- Load pictures for review cards, in-Discord activities and completed/claimed quests. These previously skipped the artwork loader entirely.
+- Prefer the campaign banner linked to the stable quest ID, including VALORANT ACES, Resident Evil Sale, Clean Crew and Nekome. Keep game artwork as a fallback for identified catalog games.
+- Use an optional public artwork index, fetching images only from validated Discord CDN paths. Artwork does not change game identification, quest acceptance, platform choice or queue eligibility.
+- Share/cache index requests off the UI thread, bound downloads and keep campaign images separate in the presentation cache. Missing images/index failures leave the existing placeholder/fallback flow available.
+
+[Download 1.16.4](https://github.com/JPEG111/orbs-release/releases/tag/v1.16.4).
 
 ### Fixed in 1.16.3 — return from Discover search
 
