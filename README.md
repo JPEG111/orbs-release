@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.16.4-2b2b33?style=flat-square" alt="v1.16.4">
+  <img src="https://img.shields.io/badge/version-1.16.5-2b2b33?style=flat-square" alt="v1.16.5">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.16.4.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.16.5.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -67,6 +67,18 @@ that point to the installation being removed.
 | **4. Stop** | Hit **STOP EVASION**, or let the timer expire. |
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
+
+### Fixed in 1.16.5 — more resilient scanning
+
+- Handle delayed platform menus, scaled/reflowed layouts and menus above or below their selector using current accessible controls.
+- Restore minimized windows when supported and reveal offscreen controls through native accessibility.
+- Recover from changing accessibility trees by rereading; never replay an uncertain account action.
+- Reject ambiguous targets and stop for visible dialogs, changed clients or leaving All Quests.
+- Recheck prepared quests before publishing. Fresh sign-in runs require observed desktop readiness even with auto-accept off.
+
+The same scanner powers Home and Discover. English controls and working accessibility remain required; custom skins and future Discord changes can still need manual handling.
+
+[Download 1.16.5](https://github.com/JPEG111/orbs-release/releases/tag/v1.16.5).
 
 ### Fixed in 1.16.4 — quest-card pictures
 
