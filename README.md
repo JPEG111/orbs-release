@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.16.7-2b2b33?style=flat-square" alt="v1.16.7">
+  <img src="https://img.shields.io/badge/version-1.17.0-2b2b33?style=flat-square" alt="v1.17.0">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.16.7.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.17.0.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -68,7 +68,24 @@ that point to the installation being removed.
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
 
-### Fixed in 1.16.7
+### English / العربية — 1.17.0
+
+Choose **English** or **العربية** on first launch. You can change it live in
+**Settings → General → Language**; your queue and automation settings stay intact.
+One app and one installer serve both languages.
+
+### بالعربي المصري
+
+- اختار **العربية** أول مرة تفتح التطبيق. تقدر تغيّرها من **الإعدادات ← عام ← اللغة**.
+- حدّد ألعابك من المكتبة، ظبّط وقت كل لعبة، وبعدها اضغط **شغّل القايمة**.
+- لو الجلسة اتقطعت، وقتك محفوظ. اختار **كمّل اللعبة** أو **الغي القايمة**.
+- فحص المهام محتاج واجهة ديسكورد بالإنجليزي حاليًا. سيبه مفتوح على صفحة المهام لحد الفحص ما يخلص.
+- أرقام الأوربس والوقت تقديرية. راجع ديسكورد عشان تتأكد من التقدّم والمكافآت الفعلية.
+
+Game names and technical identifiers remain original. Original publisher descriptions
+are available through the Arabic game-details link in their original language.
+
+## Fixed in 1.16.7
 
 - A worker exit advances the queue once. Duplicate or late events cannot skip or stop the next game.
 - Unexpected exits and startup failures pause the unfinished game with **Retry game** and **Cancel queue**.
