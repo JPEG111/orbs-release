@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.16.1-2b2b33?style=flat-square" alt="v1.16.1">
+  <img src="https://img.shields.io/badge/version-1.16.2-2b2b33?style=flat-square" alt="v1.16.2">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.16.1.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.16.2.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -67,6 +67,16 @@ that point to the installation being removed.
 | **4. Stop** | Hit **STOP EVASION**, or let the timer expire. |
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
+
+### Fixed in 1.16.2 — quest types and title matching
+
+- Recognize **Launch Quest** as an activity played inside Discord. Show **Play in Discord** and instructions instead of **Accepted / Review game** or a search for the base desktop title. These activities never enter desktop acceptance, platform selection or the queue. Finished activity rewards still appear as completed/claimed.
+- Resolve a complete instruction name or alias first, then allow a unique catalog subtitle difference: **Nekome** now resolves to **Nekome: Nazi Hunter**. Multiple subtitle choices stay manual; an unlisted edition cannot silently match its base game.
+- Use the same trademark, Unicode and apostrophe normalization in scanning and manual catalog search.
+- Inspect supported **Play Now** cards whose offscreen progress is absent, even if Discord omits the Accepted label. Reading/revealing alone never changes enrollment. Unknown progress stays unverified.
+- Give separately listed Roblox experiences a specific explanation. Clean Crew is not replaced with the Roblox desktop app; multi-game offers still need a manual selection.
+
+[Download 1.16.2](https://github.com/JPEG111/orbs-release/releases/tag/v1.16.2).
 
 ### Fixed in 1.16.1 — accepted and finished quest recognition
 
