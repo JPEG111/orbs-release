@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.17.0-2b2b33?style=flat-square" alt="v1.17.0">
+  <img src="https://img.shields.io/badge/version-1.17.1-2b2b33?style=flat-square" alt="v1.17.1">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.17.0.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.17.1.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -68,7 +68,14 @@ that point to the installation being removed.
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
 
-### English / العربية — 1.17.0
+### Queue reliability — 1.17.1
+
+Discord activity rejections no longer pass silently. Timers start after an
+acknowledged update, pause during an outage and resume after recovery. If
+reconnection fails, the current game stays available for Retry. Lists still use
+local timers; check Discord for actual quest progress and rewards.
+
+### English / العربية — 1.17.1
 
 Choose **English** or **العربية** on first launch. You can change it live in
 **Settings → General → Language**; your queue and automation settings stay intact.
