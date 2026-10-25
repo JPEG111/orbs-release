@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.17.2-2b2b33?style=flat-square" alt="v1.17.2">
+  <img src="https://img.shields.io/badge/version-1.18.0-2b2b33?style=flat-square" alt="v1.18.0">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.17.2.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.18.0.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -68,7 +68,14 @@ that point to the installation being removed.
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
 
-### Scanner navigation — 1.17.2
+### Discover showcase — 1.18.0
+
+Discover features a large game panel, compact activity counters and a horizontal
+cover browser. Status filters, keyboard navigation, search return and queue actions
+remain available. Empty states are centered; Arabic errors and search details are
+translated before fitting, keeping titles and descriptions apart.
+
+### Scanner navigation
 
 Fixes the Opening Quests stall: supports the Quests NEW label, allows non-modal
 Discord child windows and bounds each navigation stage. Cancel interrupts the
@@ -82,7 +89,7 @@ acknowledged update, pause during an outage and resume after recovery. If
 reconnection fails, the current game stays available for Retry. Lists still use
 local timers; check Discord for actual quest progress and rewards.
 
-### English / العربية — 1.17.2
+### English / العربية — 1.18.0
 
 Choose **English** or **العربية** on first launch. You can change it live in
 **Settings → General → Language**; your queue and automation settings stay intact.
