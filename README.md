@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.21.4-2b2b33?style=flat-square" alt="v1.21.4">
+  <img src="https://img.shields.io/badge/version-1.21.5-2b2b33?style=flat-square" alt="v1.21.5">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.21.4.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.21.5.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -70,6 +70,26 @@ For one-click operation, choose your Discord client in Settings, then click
 | **4. Stop** | Hit **STOP EVASION**, or let the timer expire. |
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
+
+### General quest contracts — 1.21.5
+
+Quest matching now derives selection behavior from the task's allowed desktop
+application IDs, rather than a fixed list of instruction phrases. Campaign
+branding can differ from the eligible game; unfamiliar host names, wrapped
+headings and game names containing “Play” use the same rules. Search can show
+eligible games for a collection and related hosts alongside partial literal
+matches, while exact literal matches retain priority.
+
+Tasks joined with **and** (or an unknown operator) stay under review when other
+objectives are required. Unknown task types never supply desktop-host mappings.
+Changed instructions, unsupported Windows apps, missing catalog entries and
+provider failures cannot become guessed readiness. Review guidance is available
+in both English and Egyptian Arabic.
+
+Validation includes **960 generated unfamiliar-name/layout/progress combinations**,
+504 source/compiled tests, 44 packaged native scenarios and a replay of 305 public
+definitions against a saved catalog. The replay uses simulated visible state;
+it is not a live account credit test. See the matching guide for exact limits.
 
 ### Experience names and eligible games — 1.21.4
 
