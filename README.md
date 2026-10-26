@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.21.1-2b2b33?style=flat-square" alt="v1.21.1">
+  <img src="https://img.shields.io/badge/version-1.21.2-2b2b33?style=flat-square" alt="v1.21.2">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.21.1.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.21.2.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -70,6 +70,20 @@ For one-click operation, choose your Discord client in Settings, then click
 | **4. Stop** | Hit **STOP EVASION**, or let the timer expire. |
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
+
+### Higher Discord balance, never lower — 1.21.2
+
+After a successful scan of your selected Discord client's Quests page, Orbs
+reads the visible header balance. **If it is higher than the app's total, the
+app raises its total to that exact number. If it is lower or equal, nothing is
+subtracted.** Missing, ambiguous or unreadable balances are ignored. This works
+through the shared Home, Discover and sign-in scanner.
+
+The adjustment is saved without inventing completed milestones, so it survives
+updates/reinstalls and later local milestones continue from the raised total.
+Quest reward amounts, boosts, prices and progress percentages are excluded.
+The local total can exceed your current wallet after spending; it is a local
+progress total, not a continuously synchronized Discord wallet.
 
 ### Quest-aware scan timing — 1.21.1
 
