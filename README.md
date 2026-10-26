@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.21.5-2b2b33?style=flat-square" alt="v1.21.5">
+  <img src="https://img.shields.io/badge/version-1.21.6-2b2b33?style=flat-square" alt="v1.21.6">
 </p>
 
 <p align="center">
@@ -28,9 +28,9 @@
 ---
 
 > [!IMPORTANT]
-> ### "Why can't it do every game?" A line we drew, not a wall we hit
+> ### Game support depends on a usable runtime identity
 >
-> When a game shows as **can't simulate**, that is Discord's own data, not a gap in Orbs: that title lists no Windows app, so there is nothing for Orbs to mirror at the OS level. It is not a bug or a missing feature.
+> Orbs supports Windows executable rules and valid Epic launch identities from Discord's public catalog. Apps with neither route remain unavailable in Orbs; Discord may still recognize the real app through another mechanism. A quest title alone does not reveal its executable or detection method.
 >
 > Orbs does not patch the Discord client or use your account's login token. Game presence is simulated locally. Scanning reads loaded quest cards; video tasks are skipped and ambiguous titles stay available for review.
 >
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.21.5.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.21.6.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -70,6 +70,26 @@ For one-click operation, choose your Discord client in Settings, then click
 | **4. Stop** | Hit **STOP EVASION**, or let the timer expire. |
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
+
+### Shared runtime resolution — 1.21.6
+
+Search, Discord scans and playback now use the same runtime resolver. Apps
+without a Windows executable rule can use their exact public Epic identity,
+including FC 27. New apps with matching metadata do not need a hardcoded name
+or executable update. Ready scan results enter the queue with their observed
+remaining time: a 15-minute quest at 30% gets 10:30.
+
+Eligible-game collections retain their allowed application IDs. Completed,
+claimed, video and in-Discord quests do not become desktop sessions. The
+fallback creates an isolated helper rather than replacing a real game binary;
+it does not create Steam manifests, download games or patch Discord.
+Native window ownership and message pumping are also repaired in this release.
+
+Validation: 535 source tests, 535 against 58 compiled modules, three compiled
+native window lifecycles, and native recognition with both source/packaged
+command shapes. A saved public-definition replay resolves 288 of 305 desktop
+contracts, with 10 unavailable and 7 needing review. That replay uses synthetic
+visible state and is not a live scan of every user's quests.
 
 ### General quest contracts — 1.21.5
 
@@ -554,7 +574,7 @@ Orbs never touches the Discord client. Instead it reproduces the local footprint
 
 ## Scope and honest limits
 
-**Not every game can be simulated.** Roughly 42% of the ~24,800 apps in Discord's database ship a Windows executable name Orbs can mirror (public catalog checked 23 October 2026). The rest (mostly newer titles) list no executable at all, so there is nothing to mirror and Orbs marks them "can't simulate" rather than pretending. This is a fact about Discord's data, not a limitation we can code around. See the callout at the top for why Orbs won't reach them by other means.
+**Game support is broader than the executable list, but is not universal.** Orbs uses an exact Windows executable rule or an Epic launch identity. Both are resolved from public metadata without a per-title update. Other store-only identities need a separate verified runtime route. Quest eligibility, acceptance, Desktop selection and allowed application IDs still matter. A local timer or IPC acknowledgement does not prove credit; check progress in Discord. FC 27 reached 21% in a bounded three-minute trial, confirmed by a user screenshot. Full completion and credit across every supported catalog app have not been verified.
 
 **There is a ceiling this architecture cannot pass.** Discord's quest heartbeat carries a fingerprint computed from the *actual bytes* of the detected binary. A renamed interpreter fingerprints as the interpreter, not the game. Today Discord largely does not compare this server-side, but if it ever does, every rename-based tool breaks at once, and no amount of local spoofing can fix it, because matching the hash would require the real game's files. Orbs is honest about this rather than claiming to be "undetectable."
 
