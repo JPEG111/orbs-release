@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.21.3-2b2b33?style=flat-square" alt="v1.21.3">
+  <img src="https://img.shields.io/badge/version-1.21.4-2b2b33?style=flat-square" alt="v1.21.4">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.21.3.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.21.4.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -70,6 +70,26 @@ For one-click operation, choose your Discord client in Settings, then click
 | **4. Stop** | Hit **STOP EVASION**, or let the timer expire. |
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
+
+### Experience names and eligible games — 1.21.4
+
+Search now finds Roblox from a quest's full experience title, such as
+**Scary Shawarma Kiosk: the ANOMALY**. The result names Roblox as the desktop
+application and shows which experience it belongs to. Long mission names no
+longer fail solely because they exceed the old short-title limit.
+
+The shared scanner uses an exact quest ID, matching visible instructions and
+public desktop-task application IDs to resolve the game. It still reads actual
+acceptance, Desktop choice, completion and progress from the selected Discord
+client. A 15-minute requirement at 30% gets **10:30**, with campaign art retained
+through the queue. Search results alone do not establish readiness.
+
+For selection quests such as Resident Evil Sale, Orbs chooses the first supported
+Windows application explicitly allowed by that quest's desktop task, then uses
+the normal **Accept Quest → Desktop** flow when those steps are needed. If no
+usable task definition is available, it can read accessible eligible-game names
+from the popup. Ambiguous evidence stays under review. Public metadata is
+optional; elapsed local time does not prove server-side quest credit.
 
 ### Artwork follows the game — 1.21.3
 
