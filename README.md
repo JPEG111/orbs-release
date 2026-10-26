@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.21.2-2b2b33?style=flat-square" alt="v1.21.2">
+  <img src="https://img.shields.io/badge/version-1.21.3-2b2b33?style=flat-square" alt="v1.21.3">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.21.2.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.21.3.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -70,6 +70,20 @@ For one-click operation, choose your Discord client in Settings, then click
 | **4. Stop** | Hit **STOP EVASION**, or let the timer expire. |
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
+
+### Artwork follows the game — 1.21.3
+
+Queue start and resume now retain the same validated artwork identifiers used
+by Discover. Generic Roblox can load its own high-resolution Discord application
+art even though it is absent from Steam. A Roblox experience keeps its exact
+quest campaign image; campaign art does not make it eligible for desktop play.
+
+Backdrop requests and caches distinguish application, campaign and asset hashes.
+An earlier image cannot overwrite a newer selection, and changed artwork for
+the same title can refresh. Small covers/icons are retained for cards and tiles
+but are not stretched into full-window backdrops. Public metadata and artwork
+are optional: missing art never blocks queue timing or changes quest readiness.
+Closing during navigation also cancels the indicator through its owning widget.
 
 ### Higher Discord balance, never lower — 1.21.2
 
