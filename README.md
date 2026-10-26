@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.21.0-2b2b33?style=flat-square" alt="v1.21.0">
+  <img src="https://img.shields.io/badge/version-1.21.1-2b2b33?style=flat-square" alt="v1.21.1">
 </p>
 
 <p align="center">
@@ -34,13 +34,13 @@
 >
 > Orbs does not patch the Discord client or use your account's login token. Game presence is simulated locally. Scanning reads loaded quest cards; video tasks are skipped and ambiguous titles stay available for review.
 >
-> Scan & start uses normal Discord controls to accept supported play quests and choose Desktop before starting fresh ready games at 50 minutes each. Turn One-click scan & start off for scan-only behavior, where acceptance is separately optional. This changes quest enrollment; videos and reward claiming are not automated.
+> Scan & start uses normal Discord controls to accept supported play quests and choose Desktop before starting fresh ready games at the remaining quest time. Turn One-click scan & start off for scan-only behavior, where acceptance is separately optional. This changes quest enrollment; videos and reward claiming are not automated.
 
 ---
 
 ## Install
 
-1. Download **`Orbs_Setup_1.21.0.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.21.1.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -71,6 +71,24 @@ For one-click operation, choose your Discord client in Settings, then click
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
 
+### Quest-aware scan timing — 1.21.1
+
+Scans now use the quest's required time and its latest visible progress, rather
+than assigning 50 minutes to every game. A 15-minute quest at 30% receives
+**10:30**; an unfinished quest at 0% receives **15 minutes**. Queue editing,
+saved lists, session targets and resume retain seconds. A new scan refreshes
+that game's timing; multiple ready quests for one game use the longest
+remaining requirement.
+
+For multi-game quests, Orbs reads the quest's Eligible Games popup and chooses
+an exact supported Windows title from that list, then checks membership again
+before acceptance. Named image, link and button covers are supported. Missing
+or ambiguous names stay visible for review. A Roblox experience written
+“by Roblox” or “on Roblox” is identified as that experience, rather than silently
+replaced by the generic Roblox app. Scary Shawarma Kiosk is currently absent
+from Discord's public detectable-game catalog, so play it through Discord's
+instructions. Local checks do not prove server-side quest credit.
+
 ### Your connection, your routine — 1.21.0
 
 The new in-app connection picker uses large cards over a blurred backdrop and
@@ -98,7 +116,7 @@ scan/start also asks when no choice is saved. Scanning and playback stay with
 that client; other open clients are not used as a fallback.
 
 **Scan & start** accepts supported quests, selects Desktop, makes a fresh list of
-verified ready games at **50 minutes each**, and starts it on Home. Multi-game
+verified ready games at **the remaining quest time**, and starts it on Home. Multi-game
 quests can use a supported title from the actual eligible-games list. Completed,
 claimed, video and Launch Quest tasks are excluded from desktop playback.
 
