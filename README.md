@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.20.0-2b2b33?style=flat-square" alt="v1.20.0">
+  <img src="https://img.shields.io/badge/version-1.20.1-2b2b33?style=flat-square" alt="v1.20.1">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.20.0.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.20.1.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -70,6 +70,12 @@ For one-click operation, choose your Discord client in Settings, then click
 | **4. Stop** | Hit **STOP EVASION**, or let the timer expire. |
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
+
+### Clear title and transparent navigation — 1.20.1
+
+The small window title is larger and clearer in English and Arabic. The left
+navigation now shows the same game backdrop as the page, with brighter labels
+and a subtle text shadow. The opaque sidebar and its dark caption corner are gone.
 
 ### Choose your Discord client — 1.20.0
 
