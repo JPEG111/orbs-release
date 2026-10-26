@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.19.1-2b2b33?style=flat-square" alt="v1.19.1">
+  <img src="https://img.shields.io/badge/version-1.20.0-2b2b33?style=flat-square" alt="v1.20.0">
 </p>
 
 <p align="center">
@@ -34,13 +34,13 @@
 >
 > Orbs does not patch the Discord client or use your account's login token. Game presence is simulated locally. Scanning reads loaded quest cards; video tasks are skipped and ambiguous titles stay available for review.
 >
-> Quest acceptance is optional: when enabled in Settings, scans use the normal Discord controls to accept supported play quests and choose Desktop. This changes quest enrollment in your account. It does not simulate videos or claim rewards.
+> Scan & start uses normal Discord controls to accept supported play quests and choose Desktop before starting fresh ready games at 50 minutes each. Turn One-click scan & start off for scan-only behavior, where acceptance is separately optional. This changes quest enrollment; videos and reward claiming are not automated.
 
 ---
 
 ## Install
 
-1. Download **`Orbs_Setup_1.19.1.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.20.0.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -59,6 +59,9 @@ that point to the installation being removed.
 
 ## Usage
 
+For one-click operation, choose your Discord client in Settings, then click
+**Scan & start** on Home or in Library. The steps below are the manual alternative.
+
 | Step | What to do |
 | :-- | :-- |
 | **1. Pick a game** | Open **Library > Discover** and search, or scan Discord Quests. Review support and add games to Queue. |
@@ -67,6 +70,22 @@ that point to the installation being removed.
 | **4. Stop** | Hit **STOP EVASION**, or let the timer expire. |
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
+
+### Choose your Discord client — 1.20.0
+
+Choose **Discord**, **Discord PTB** or **Discord Canary** in Settings. The first
+scan/start also asks when no choice is saved. Scanning and playback stay with
+that client; other open clients are not used as a fallback.
+
+**Scan & start** accepts supported quests, selects Desktop, makes a fresh list of
+verified ready games at **50 minutes each**, and starts it on Home. Multi-game
+quests can use a supported title from the actual eligible-games list. Completed,
+claimed, video and Launch Quest tasks are excluded from desktop playback.
+
+Turn **One-click scan & start** off for scan-only behavior. **Automatic mode**
+repeats the fresh flow at Windows sign-in with the saved client and startup delay.
+It runs after sign-in, not while the PC is powered off. Existing data is retained.
+Local connection checks do not guarantee Discord quest credit.
 
 ### Artwork recovery — 1.19.1
 
