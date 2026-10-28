@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.21.6-2b2b33?style=flat-square" alt="v1.21.6">
+  <img src="https://img.shields.io/badge/version-1.21.7-2b2b33?style=flat-square" alt="v1.21.7">
 </p>
 
 <p align="center">
@@ -30,7 +30,7 @@
 > [!IMPORTANT]
 > ### Game support depends on a usable runtime identity
 >
-> Orbs supports Windows executable rules and valid Epic launch identities from Discord's public catalog. Apps with neither route remain unavailable in Orbs; Discord may still recognize the real app through another mechanism. A quest title alone does not reveal its executable or detection method.
+> Orbs uses Windows executable rules, valid public Epic launch identities, or a validated recognized-process/RPC fallback. The fallback preserves the target application ID and requires a usable carrier. A quest title alone does not reveal its executable or guarantee credit.
 >
 > Orbs does not patch the Discord client or use your account's login token. Game presence is simulated locally. Scanning reads loaded quest cards; video tasks are skipped and ambiguous titles stay available for review.
 >
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.21.6.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.21.7.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -71,7 +71,34 @@ For one-click operation, choose your Discord client in Settings, then click
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
 
-### Shared runtime resolution — 1.21.6
+### General runtime fallback and reliability — 1.21.7
+
+Search, quest resolution and playback now use three routes: a valid Windows
+executable rule, an exact public Epic identity, or a validated recognized carrier
+with the target application's local RPC activity on the same process. The target
+application ID stays unchanged; no guessed target filename or per-title fallback
+list is required. The carrier must resolve unambiguously from current metadata.
+
+In a pinned Stable Discord trial, the user reported FC 27 advancing from 25% to
+45% over three minutes, then reaching **100% / ready to claim** after its remaining
+8:15 plus a 30-second diagnostic buffer. Stable, Canary and Frostpunk were open.
+No reward was claimed automatically. This is one completed quest, not proof that
+every application or future quest earns credit. Normal queues retain observed
+remaining time; the test buffer does not change production durations.
+
+Runtime files now live in fresh marker-backed directories. Setup never reuses an
+existing game binary or dependency folder; cleanup validates ownership and keeps
+locked cleanup retryable. Worker parent/stop handles, timer rotation, connection
+outages and CLI failure handling are also repaired. Failed queue items remain
+available for retry instead of being reported as completed.
+
+Validation: **595 source tests and 595 tests against 58 compiled modules**, native
+window lifecycle checks and an actual frozen worker launched under a `.bin`
+filename. The saved catalog audit resolves 24,881 metadata recipes; a separate
+305-definition replay resolves 298 and leaves seven missing identities in review.
+Neither metadata count establishes live quest credit for all records.
+
+### Shared runtime resolution — 1.21.6 (historical)
 
 Search, Discord scans and playback now use the same runtime resolver. Apps
 without a Windows executable rule can use their exact public Epic identity,
@@ -559,7 +586,7 @@ Orbs never touches the Discord client. Instead it reproduces the local footprint
 
 | Layer | What it does |
 | :-- | :-- |
-| **Process name** | Copies the Python interpreter to a local directory under the exact filename of the target game's binary, so `EnumProcesses` reports the expected executable. |
+| **Process name** | Uses a sourced executable rule, public Epic identity or validated carrier inside a fresh owned runtime directory. The target RPC application ID is preserved. |
 | **Window handle** | Creates a real Win32 window with the game's window class and title, positioned off-screen, backed by a live message pump so it never registers as hung. |
 | **Rich Presence** | Publishes activity over Discord's local IPC named pipe (`\\.\pipe\discord-ipc-N`) rather than forging REST calls. |
 | **Process ancestry** | Spawns the worker with a spoofed parent process (`steam.exe` when Steam is running, otherwise `explorer.exe`) via `PROC_THREAD_ATTRIBUTE_PARENT_PROCESS`, so the process tree looks like a normally-launched game rather than a child of Orbs. |
@@ -574,17 +601,17 @@ Orbs never touches the Discord client. Instead it reproduces the local footprint
 
 ## Scope and honest limits
 
-**Game support is broader than the executable list, but is not universal.** Orbs uses an exact Windows executable rule or an Epic launch identity. Both are resolved from public metadata without a per-title update. Other store-only identities need a separate verified runtime route. Quest eligibility, acceptance, Desktop selection and allowed application IDs still matter. A local timer or IPC acknowledgement does not prove credit; check progress in Discord. FC 27 reached 21% in a bounded three-minute trial, confirmed by a user screenshot. Full completion and credit across every supported catalog app have not been verified.
+**Game support is broader than the executable list, but is not universal.** Orbs resolves an executable rule, Epic identity or recognized-process/RPC carrier without a per-target update. Quest eligibility, acceptance, Desktop selection and allowed application IDs still matter. A local timer or IPC acknowledgement does not prove credit; check Discord. The user confirmed full FC 27 completion with the carrier route. Credit across every catalog application and future quest has not been verified.
 
-**There is a ceiling this architecture cannot pass.** Discord's quest heartbeat carries a fingerprint computed from the *actual bytes* of the detected binary. A renamed interpreter fingerprints as the interpreter, not the game. Today Discord largely does not compare this server-side, but if it ever does, every rename-based tool breaks at once, and no amount of local spoofing can fix it, because matching the hash would require the real game's files. Orbs is honest about this rather than claiming to be "undetectable."
+**There is a ceiling this architecture cannot pass.** Discord's quest heartbeat carries a fingerprint computed from the *actual bytes* of the detected binary. A renamed interpreter fingerprints as the interpreter, not the game. Server acceptance rules are not known. Changes to recognition or validation may stop a working route; the local binary does not become the signed original game. Orbs is honest about this rather than claiming to be "undetectable."
 
 **The auditor grades Orbs against its own model, not against Discord's.** A clean score means the payload shows none of the anomalies Orbs knows how to look for. It is not evidence that Discord cannot detect the session, and nobody outside Discord knows what their detection actually measures. Treat a clean score as a sanity check, not a guarantee.
 
 **Using this violates Discord's Terms of Service.** Spoofed activity can get an account suspended or terminated, and enforcement is known to be applied retroactively in batches, so "it worked and nothing happened" is not proof of safety. That risk is yours. Don't run it on an account you can't afford to lose.
 
-Things that will expose a session no matter what Orbs does:
+Other limits to keep in mind:
 
-- **Running a real game at the same time.** Two heavy games at once is an impossible resource footprint.
+- **Running another game or Discord client.** Select the intended client consistently. One FC 27 trial completed with another game and two clients open; that does not establish compatibility with every concurrent setup.
 - **Screen sharing the spoofed game.** The capture hook attaches to a window that renders nothing.
 - **Marathon sessions.** Use the timer. A believable session ends.
 
