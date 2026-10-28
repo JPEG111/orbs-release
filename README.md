@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.21.7-2b2b33?style=flat-square" alt="v1.21.7">
+  <img src="https://img.shields.io/badge/version-1.21.8-2b2b33?style=flat-square" alt="v1.21.8">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.21.7.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.21.8.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -70,6 +70,24 @@ For one-click operation, choose your Discord client in Settings, then click
 | **4. Stop** | Hit **STOP EVASION**, or let the timer expire. |
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
+
+### Search visibility and installed-copy safeguards — 1.21.8
+
+Builds now request a Windows Search exclusion for generated output, and the
+installer adds Orbs-owned defaults for its installed files, runtime namespaces
+and update staging. The Start Menu app remains searchable; uninstall stays in
+Windows Settings without an extra Search shortcut. Maintenance setup cannot
+launch the dashboard or resume a queue. Existing user Search choices are preserved.
+
+609 source tests and 609 tests against 59 compiled modules pass. Offline upgrade,
+repair and reinstall preserve exact saved-data fixtures and the registered location.
+On the development PC, the approved upgrade from 1.21.5 preserved all seven
+saved-file hashes and did not launch Orbs. Search cache cleanup and the wider
+PC development-folder policy are separate from the app's scoped installer rules.
+No application, source or backup files were deleted by that PC Search cleanup.
+
+These safeguards address the demonstrated duplicates; arbitrary third-party
+installers and future Discord behavior still require validation.
 
 ### General runtime fallback and reliability — 1.21.7
 
