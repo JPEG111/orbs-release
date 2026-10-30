@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.21.8-2b2b33?style=flat-square" alt="v1.21.8">
+  <img src="https://img.shields.io/badge/version-1.21.9-2b2b33?style=flat-square" alt="v1.21.9">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.21.8.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.21.9.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -70,6 +70,17 @@ For one-click operation, choose your Discord client in Settings, then click
 | **4. Stop** | Hit **STOP EVASION**, or let the timer expire. |
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
+
+### Home navigation compatibility — 1.21.9
+
+The scanner supports Home buttons, links and tabs in the server rail, alongside
+the older Direct Messages tree item. Tree/tab navigation uses selection first.
+Unrelated or duplicate controls are rejected, and reaching Quests is verified.
+
+The old bridge reproduces the Home-unavailable error in an owned button fixture;
+native fixture and provider checks validate the revised routes. A live retry in
+the affected Discord layout remains necessary. No coordinate-click fallback or
+account API is introduced; arbitrary future layouts are not guaranteed.
 
 ### Search visibility and installed-copy safeguards — 1.21.8
 
