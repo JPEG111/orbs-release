@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.21.10-2b2b33?style=flat-square" alt="v1.21.10">
+  <img src="https://img.shields.io/badge/version-1.21.11-2b2b33?style=flat-square" alt="v1.21.11">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.21.10.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.21.11.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -70,6 +70,28 @@ For one-click operation, choose your Discord client in Settings, then click
 | **4. Stop** | Hit **STOP EVASION**, or let the timer expire. |
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
+
+### Scanner resilience — 1.21.11
+
+Navigation recognizes named controls and labels within tested wrapper variations,
+normalizes harmless label formatting, and verifies context plus actual arrival.
+Repeated labels for one control are deduplicated; ambiguous or unrelated targets
+remain blocked. Failures retain a bounded local diagnostic explaining rejected
+navigation candidates, without saving unrelated text or credentials.
+A sanitized last-working profile helps identify later client-version or
+navigation-structure differences; it does not authorize unverified clicks.
+
+Scanner releases require test evidence bound to the exact candidate, including
+the native variation matrix, live/repeat scans and queue persistence checks.
+English Discord navigation remains required. These changes do not introduce
+self-learning or guarantee future layouts or gameplay credit.
+
+The exact candidate passed 630 source and 630 compiled-module tests, 42 native
+scenarios, live Stable navigation and full/repeat scans. Five accepted tasks
+were verified ready; the repeat made no Accept/Desktop calls. Isolated queue
+publication produced four unique 15-minute entries, and offline upgrade, repair
+and reinstall retained exact saved-data fixtures. Gameplay credit and fresh
+enrollment in this candidate were not tested live.
 
 ### Unnamed Home control compatibility — 1.21.10
 
