@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/download-latest-e52e3d?style=flat-square" alt="Download">
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-2b2b33?style=flat-square" alt="Windows 10/11">
-  <img src="https://img.shields.io/badge/version-1.21.9-2b2b33?style=flat-square" alt="v1.21.9">
+  <img src="https://img.shields.io/badge/version-1.21.10-2b2b33?style=flat-square" alt="v1.21.10">
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ## Install
 
-1. Download **`Orbs_Setup_1.21.9.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
+1. Download **`Orbs_Setup_1.21.10.exe`** from the [latest release](https://github.com/JPEG111/orbs-release/releases/latest).
 2. Run it. Windows SmartScreen will warn you the publisher is unknown, because the installer is unsigned. This is expected. Choose **More info → Run anyway**.
 3. Launch **Orbs** from the Start Menu or your desktop.
 
@@ -70,6 +70,15 @@ For one-click operation, choose your Discord client in Settings, then click
 | **4. Stop** | Hit **STOP EVASION**, or let the timer expire. |
 
 Closing the window minimises Orbs to the system tray and it keeps running. Right-click the tray icon to restore, toggle, or quit.
+
+### Unnamed Home control compatibility — 1.21.10
+
+A navigation-only live read identified why the earlier fix missed Home: the
+label was text inside unnamed clickable groups. Orbs now resolves that label to
+its immediate actionable parent only within the verified server rail. Duplicate
+and unrelated controls remain blocked. The selector finds the target on the
+observed client without invoking it; owned fixtures verify navigation. Live
+navigation and quest credit still need confirmation.
 
 ### Home navigation compatibility — 1.21.9
 
