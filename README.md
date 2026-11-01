@@ -61,6 +61,7 @@ your account token or patch the Discord client.
 
 If a scan fails, check the selected client and English Discord interface, then
 open **All Quests** and retry. Diagnostics are available in **Settings → Open logs**.
+Scanning can leave recognized settings screens; finish any unsaved Discord edits first.
 The installer is unsigned, so Windows may show a SmartScreen warning.
 
 <a id="scanner-resilience--12111"></a>
