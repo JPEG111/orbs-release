@@ -76,9 +76,10 @@ Closing the window minimises Orbs to the system tray and it keeps running. Right
 A navigation-only live read identified why the earlier fix missed Home: the
 label was text inside unnamed clickable groups. Orbs now resolves that label to
 its immediate actionable parent only within the verified server rail. Duplicate
-and unrelated controls remain blocked. The selector finds the target on the
-observed client without invoking it; owned fixtures verify navigation. Live
-navigation and quest credit still need confirmation.
+and unrelated controls remain blocked. The released bridge passed an explicitly
+authorized live Home -> Quests -> All Quests navigation test on the observed
+client, starting in Home's sidebar context. Arbitrary server-to-Home transitions,
+quest reading and quest credit were not part of that check.
 
 ### Home navigation compatibility — 1.21.9
 
