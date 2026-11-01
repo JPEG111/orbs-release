@@ -81,6 +81,12 @@ authorized live Home -> Quests -> All Quests navigation test on the observed
 client, starting in Home's sidebar context. Arbitrary server-to-Home transitions,
 quest reading and quest credit were not part of that check.
 
+A subsequent full scanner test passed live reading, supported-task acceptance,
+Desktop preparation and repeated-scan readiness on the observed Stable client.
+Queue publication, duplicate handling and timing were checked using that report
+in an isolated fixture. Gameplay credit, arbitrary starting views and future
+Discord layouts remain outside those checks.
+
 ### Home navigation compatibility — 1.21.9
 
 The scanner supports Home buttons, links and tabs in the server rail, alongside
