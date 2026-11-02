@@ -33,7 +33,8 @@ Want manual control? Turn off **One-click scan & start** in Settings. Use
 - **English / العربية** — choose at first launch or change it in Settings.
 - **Automatic mode** — optional launch, scan and queue start at Windows sign-in,
   with a startup delay and cancellation control.
-- **Editable queues** — change play times, reorder games, skip or stop from Home.
+- **Editable queues** — change play times and order. Completed games advance;
+  interrupted games keep their remaining time for retry.
 - **Local progress** — estimated Orbs, time saved and an animated rank ladder.
 
 All setup choices remain available in **Settings**.
@@ -62,7 +63,7 @@ your account token or patch the Discord client.
 If a scan fails, check the selected client and English Discord interface, then
 open **All Quests** and retry. Diagnostics are available in **Settings → Open logs**.
 Scanning waits through common loading states and can leave recognized settings;
-finish any unsaved Discord edits first.
+finish any unsaved Discord edits first. The cursor may stay still during a scan.
 The installer is unsigned, so Windows may show a SmartScreen warning.
 
 <a id="scanner-resilience--12111"></a>
