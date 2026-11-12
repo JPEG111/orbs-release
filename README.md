@@ -17,6 +17,11 @@
 
 ## Get started
 
+**1.21.17:** Scanned quest queue times include a 30-second allowance after
+the remaining time shown by Discord. The scanner also handles verified menu
+and loading states more reliably and restores artwork for exact quest IDs.
+Check quest credit in Discord; the extra time does not guarantee server credit.
+
 1. **[Download the latest installer](https://github.com/JPEG111/orbs-release/releases/latest)** and install Orbs. No Python required.
 2. **Open Discord**, then choose your Discord client and language in Orbs setup.
 3. **Click Scan & start** on Home or in Library.
